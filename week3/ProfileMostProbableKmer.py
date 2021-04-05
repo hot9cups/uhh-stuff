@@ -1,5 +1,5 @@
 def profile_most_probable_kmer(text, k, profile):
-    highest_prob = 0
+    highest_prob = -1
     most_probable_kmer = ""
     for i in range(len(text) - k + 1):
         kmer = text[i : i+k]
