@@ -13,7 +13,7 @@ def get_profile(counts = None, dna = None):
     
     for nucleotide in nucleotides:
         for index in range(len(profile[nucleotide])):
-            profile[nucleotide][index] /= col_count
+            profile[nucleotide][index] /= max(col_count, 1)
     
     return profile
 
