@@ -1,11 +1,15 @@
 from Counts import get_counts
 from copy import deepcopy
 
-def get_profile(counts = None, dna = None):
+def get_profile(counts = None, dna = None, laplacian_pseudocount = 0):
     if counts is None:
         counts = get_counts(dna)
     nucleotides = list("ACGT")
     profile = deepcopy(counts)
+
+    for nucleotide in nucleotides:
+        for index in range(len(profile[nucleotide])):
+            profile[nucleotide][index] += laplacian_pseudocount
 
     col_count = 0
     for nucleotide in nucleotides:
