@@ -13,7 +13,7 @@ def get_profile(counts = None, dna = None, laplacian_pseudocount = 0):
 
     col_count = 0
     for nucleotide in nucleotides:
-        col_count += counts[nucleotide][0]
+        col_count += profile[nucleotide][0]
     
     for nucleotide in nucleotides:
         for index in range(len(profile[nucleotide])):
